@@ -106,6 +106,7 @@
 
 .trends {
   width: 100%;
+  margin-top: 60px;
 }
 
 .new-trends {
@@ -114,7 +115,6 @@
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 60px;
 }
 
 .new-trends:after {
@@ -145,6 +145,7 @@
   z-index: 10;
   width: calc(25% - 5px);
   min-height: 320px;
+  padding: 15px 20px;
 }
 
 .trend::after {
@@ -166,9 +167,7 @@
 .trend-info {
   border: 3px solid #b59f5b;
   padding: 32px 33px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 16px;
+  width: 100%;
 }
 
 .category-item-link-trend {
@@ -228,9 +227,7 @@
 }
 
 .main {
-  /*max-width: 778px;*/
-  flex-grow: 1;
-  padding-right: 120px;
+  max-width: 778px;
 }
 
 .post-list {
@@ -243,6 +240,7 @@
 }
 
 .post-list-img {
+  min-width: 381px;
   width: 381px;
   background-color: #fff;
 }
@@ -444,13 +442,16 @@
   background-color: #323232;
 }
 
+.subscribe-box {
+  margin-top: 58px;
+}
+
 .subscribe-title {
   color: #0f0d0e;
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 58px;
 }
 
 .subscribe-title:after {
@@ -615,6 +616,7 @@
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 58px;
 }
 
 .shop {
@@ -623,7 +625,6 @@
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 58px;
 }
 
 .shop::after {
@@ -652,9 +653,8 @@
 }
 
 .shop-img {
-  max-width: 100%;
-  margin-left: 21px;
-  margin-right: 21px;
+  width: 100%;
+  padding: 0 21px;
 }
 
 .shop-info {
@@ -993,10 +993,6 @@
 }
 
 @media (max-width: 1200px) {
-  .content {
-    flex-wrap: wrap;
-  }
-
   .menu-list {
     display: none;
   }
@@ -1031,12 +1027,15 @@
   .menu-burger__header:before {
     top: 0px;
   }
+
+  .category {
+    flex-wrap: wrap;
+  }
 }
 
 @media (min-width: 641px) and (max-width: 1200px) {
   .welcome {
     background-image: url("../img/banner-bg-tablet.jpg");
-    /*min-width: 774px;*/
     min-width: 641px;
     max-width: 100%;
   }
@@ -1055,10 +1054,13 @@
     font-size: 40px;
   }
 
+  .trends {
+    margin-top: 45px;
+  }
+
   .new-trends {
     color: #0f0d0e;
     font-size: 18px;
-    margin-top: 45px;
   }
 
   .new-trends::after {
@@ -1086,30 +1088,34 @@
     margin-left: 0px;
   }
 
+  .trend-info {
+    padding: 29px 30px;
+  }
+
+  .content {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
   .main {
-    max-width: 392px;
-    padding-right: 0;
+    width: 100%;
+    margin-right: 35px;
   }
 
   .post-list {
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 38px;
+    border-bottom: 3px solid #eeeeee;
   }
 
   .post-list-img {
-    width: 392px;
+    min-width: 264px;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   .post-list:nth-child(n + 2) {
     margin-top: 0;
-  }
-
-  .post-list:nth-child(n + 2)::before {
-    content: "";
-    margin-bottom: 40px;
-    background-color: #eeeeee;
-    width: 392px;
-    height: 3px;
   }
 
   .post-list-info {
@@ -1135,11 +1141,12 @@
   }
 
   .shop-block {
+    width: calc(100% / 2 - 11px);
     margin-bottom: 26px;
   }
 
-  .shop-img {
-    width: calc(100% - 42px);
+  .shop-info {
+    width: 100%;
   }
 
   .shop-title-name {
@@ -1157,22 +1164,31 @@
   }
 }
 
-@media (min-width: 801px) and (orientation: landscape) {
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
   .trend {
-    width: calc(25% - 5px);
+    width: calc(25% - 3px);
   }
 
   .trend:nth-child(n + 3) {
-    margin-top: 0;
+    margin-top: 0px;
   }
 }
 
 /*mobil*/
 
-
 @media (min-width: 641px) {
   .logo-mobile {
     display: none;
+  }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  .trend {
+    width: calc(50% - 3px);
+  }
+
+  .trend:nth-child(n + 3) {
+    margin-top: 5px;
   }
 }
 
@@ -1237,10 +1253,16 @@
     margin-left: 0px;
   }
 
+  .trend-info {
+    padding: 27px 17px;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
     padding-top: 43px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .main {
@@ -1251,26 +1273,18 @@
   .post-list {
     display: flex;
     flex-direction: column;
+    border-bottom: 3px solid #eeeeee;
+    margin-bottom: 35px;
   }
 
   .post-list:nth-child(n + 2) {
     margin-top: 0;
   }
 
-  .post-list::after {
-    content: "";
-    margin-bottom: 33px;
-    background-color: #eeeeee;
-    width: 329px;
-    height: 3px;
-  }
-
-  .post-list-img-box {
-    width: 100%;
-  }
-
   .post-list-img {
+    min-width: 264px;
     width: 100%;
+    margin-bottom: 13px;
   }
 
   .post-list-info {
@@ -1279,7 +1293,12 @@
 
   .post-text {
     font-size: 14px;
-    padding-bottom: 15px;
+    padding-bottom: 20px;
+    margin-top: 17px;
+  }
+
+  .post-data {
+    margin-top: 20px;
   }
 
   .post-title-name {
@@ -1325,10 +1344,6 @@
     flex-wrap: wrap;
   }
 
-  .shop-img {
-    width: calc(100% - 42px);
-  }
-
   .shop-info {
     width: 100%;
   }
@@ -1346,11 +1361,5 @@
 
   .feedback {
     font-size: 18px;
-  }
-}
-
-@media (max-width: 900px) and (orientation: landscape) {
-  .trend {
-    width: calc(50% - 5px);
   }
 }
