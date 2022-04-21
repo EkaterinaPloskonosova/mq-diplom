@@ -817,7 +817,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .popup {
@@ -828,14 +828,14 @@
   left: 0;
   z-index: 100;
   display: none;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .popup-active {
   display: flex;
   justify-content: center;
   align-items: center;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .popup_container {
@@ -844,7 +844,7 @@
   position: fixed;
   z-index: 200;
   padding: 48px 30px;
-  visibility: hidden;
+  /*visibility: hidden;*/
 }
 
 .popup__close {
@@ -896,7 +896,7 @@
 }
 
 .select {
-  width: 330px;
+  width: 100%;
   height: 48px;
   background-color: #f4f7f6;
   font-size: 13px;
@@ -911,6 +911,7 @@
   background-position: right 10px center;
   background-size: 10px;
   padding-left: 16px;
+  border: none;
 }
 
 .select:focus {
@@ -951,14 +952,16 @@
 }
 
 .textarea {
-  min-width: 330px;
+  width: 100%;
   max-width: 330px;
-  min-height: 131px;
-  max-height: 200px;
+  min-width: 330px;
+  max-height: 132px;
+  min-height: 132px;
   background-color: #f4f7f6;
   padding: 16px;
   font-family: inherit;
   font-size: 13px;
+  border: none;
 }
 
 .textarea:focus {
@@ -975,11 +978,12 @@
   font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
-  width: 330px;
+  width: 100%;
   height: 48px;
   background-color: #b59f5b;
   cursor: pointer;
   margin-top: 22px;
+  border: none;
 }
 
 .button:hover {
@@ -1042,7 +1046,7 @@
 
   .welcome-container {
     max-width: 100%;
-    /*margin: 0 auto;*/
+    margin: 0 auto;
   }
 
   .banner {
@@ -1131,6 +1135,11 @@
     padding-bottom: 15px;
   }
 
+  .shops {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
   .shop {
     font-size: 18px;
     margin-top: 45px;
@@ -1155,12 +1164,39 @@
 
   .footer {
     width: 100%;
+    padding: 50px 35px 40px 35px;
+  }
+
+  .socials {
+    padding-top: 31px;
+    padding-bottom: 31px;
+  }
+
+  .copyright-box {
+    margin-top: 45px;
   }
 
   /*popap*/
 
+  .popup__close {
+    background-size: 28px;
+    width: 27px;
+    height: 27px;
+    top: -32px;
+  }
+
   .feedback {
     font-size: 18px;
+  }
+
+  .radio-group-text::before {
+    width: 25px;
+    height: 25px;
+    background-size: 23px;
+  }
+
+  .radio-group:nth-of-type(n + 2) {
+    margin-left: 33px;
   }
 }
 
@@ -1182,16 +1218,6 @@
   }
 }
 
-@media (max-width: 640px) and (orientation: landscape) {
-  .trend {
-    width: calc(50% - 3px);
-  }
-
-  .trend:nth-child(n + 3) {
-    margin-top: 5px;
-  }
-}
-
 @media (max-width: 640px) {
   .welcome {
     background-image: url("../img/banner-mobile.jpg");
@@ -1203,7 +1229,7 @@
   }
 
   .welcome-container {
-    max-width: 330px;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -1225,6 +1251,10 @@
     width: 284px;
   }
 
+  .trends {
+    margin-top: 41px;
+  }
+
   .new-trends {
     color: #0f0d0e;
     font-size: 16px;
@@ -1240,16 +1270,12 @@
   }
 
   .trend {
-    width: 100%;
+    width: calc(50% - 3px);
     min-height: 232px;
   }
 
-  .trend:nth-child(n + 2) {
+  .trend:nth-child(n + 3) {
     margin-top: 5px;
-    margin-left: 0px;
-  }
-
-  .trend:nth-child(even) {
     margin-left: 0px;
   }
 
@@ -1328,8 +1354,26 @@
     font-size: 16px;
   }
 
+  .subscribe-box {
+    margin-top: 41px;
+  }
+
+  .tags-block {
+    margin-top: 41px;
+  }
+
   .tags {
     justify-content: space-between;
+  }
+
+  .themes-block {
+    margin-top: 41px;
+  }
+
+  .shops {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 41px;
   }
 
   .shop {
@@ -1338,6 +1382,10 @@
 
   .shop-block {
     margin-bottom: 26px;
+  }
+
+  .shop-block:nth-last-child(1) {
+    margin-bottom: 0;
   }
 
   .shop-box {
@@ -1357,9 +1405,66 @@
     padding: 42px 15px;
   }
 
+  .socials {
+    padding-top: 31px;
+    padding-bottom: 31px;
+  }
+
+  .copyright-box {
+    margin-top: 45px;
+  }
+
   /*popap*/
+
+  .popup__close {
+    background-size: 31px;
+    width: 30px;
+    height: 30px;
+    top: -35px;
+  }
+
+  .popup_container {
+    box-sizing: border-box;
+    max-width: 300px;
+    padding: 27px 25px;
+    max-height: 545px;
+  }
+
+  .popap_feedback {
+    height: 100vh;
+    overflow-y: auto;
+  }
 
   .feedback {
     font-size: 18px;
+  }
+
+  .radio-group-text::before {
+    width: 25px;
+    height: 25px;
+    background-size: 23px;
+  }
+
+  .radio-group:nth-of-type(n + 2) {
+    margin-left: 35px;
+  }
+
+  .textarea {
+    min-width: 250px;
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 640px) and (orientation: portrait) {
+  .trend {
+    width: 100%;
+  }
+
+  .trend:nth-child(n + 2) {
+    margin-top: 5px;
+  }
+
+  .trend:nth-child(even) {
+    margin-left: 0px;
   }
 }
